@@ -8,6 +8,7 @@ cleanup () {
   local partition
   for partition in $cleanup_ro_partitions; do
     blockdev --setrw "$partition"
+    debug "partition $partition set to read-write"
   done
   if $cleanup_tmpdir; then
     rm -rf "$OS_PROBER_TMP"
@@ -173,8 +174,11 @@ ro_partition () {
 	if type blockdev >/dev/null 2>&1 && \
 	   [ "$(blockdev --getro "$1")" = 0 ] && \
 	   blockdev --setro "$1"; then
+		debug "partition $1 set to read-only"
 		cleanup_ro_partitions="${cleanup_ro_partitions:+$cleanup_ro_partitions }$1"
 		trap cleanup EXIT HUP INT QUIT TERM
+	else
+		warn "setting partition $1 to read-only failed"
 	fi
 }
 
