@@ -3,6 +3,16 @@
 . /usr/share/os-prober/common.sh
 set -e
 
+do_unmount() {
+	if [ "$mounted" ]; then
+		umount "$tmpmnt/boot" 2>/dev/null || true
+		if ! umount "$tmpmnt"; then
+			warn "failed to umount $tmpmnt"
+		fi
+	fi
+	rmdir "$tmpmnt" || true
+}
+
 partition="$1"
 
 types="$(fs_type "$partition")" || types=NOT-DETECTED
@@ -64,23 +74,13 @@ if [ "$mounted" ]; then
 			debug "running $test $partition $bootpart $tmpmnt $type"
 			if $test "$partition" "$bootpart" "$tmpmnt" "$type"; then
 				debug "$test succeeded"
-				umount "$tmpmnt/boot" 2>/dev/null || true 	
-				if ! umount "$tmpmnt"; then
-					warn "failed to umount $tmpmnt"
-				fi
-				rmdir "$tmpmnt" || true
+				do_unmount
 				exit 0
 			fi
 		fi
 	done
-
-	umount "$tmpmnt/boot" 2>/dev/null || true 	
-	if ! umount "$tmpmnt"; then
-		warn "failed to umount $tmpmnt"
-	fi
 fi
-
-rmdir "$tmpmnt" || true
+do_unmount
 
 # No tests found anything.
 exit 1

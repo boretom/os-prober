@@ -5,6 +5,15 @@ partition="$1"
 
 . /usr/share/os-prober/common.sh
 
+do_unmount() {
+	if [ "$mounted" ]; then
+		if ! umount "$tmpmnt"; then
+			warn "failed to umount $tmpmnt"
+		fi
+	fi
+	rmdir "$tmpmnt" || true
+}
+
 types="$(fs_type "$partition")" || types=NOT-DETECTED
 if [ "$types" = NOT-DETECTED ]; then
 	debug "$1 type not recognised; skipping"
@@ -74,20 +83,13 @@ if [ "$mounted" ]; then
 		if [ -f "$test" ] && [ -x "$test" ]; then
 			if "$test" "$partition" "$tmpmnt" "$type"; then
 				debug "os found by subtest $test"
-				if ! umount "$tmpmnt"; then
-					warn "failed to umount $tmpmnt"
-				fi
-				rmdir "$tmpmnt" || true
+				do_unmount
 				exit 0
 			fi
 		fi
 	done
-	if ! umount "$tmpmnt"; then
-		warn "failed to umount $tmpmnt"
-	fi
 fi
-
-rmdir "$tmpmnt" || true
+do_unmount
 
 # No tests found anything.
 exit 1
