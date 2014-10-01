@@ -8,7 +8,7 @@ mpoint="$2"
 type="$3"
 
 # This file is for UEFI platform only
-if [ ! -d /sys/firmware/efi ]; then
+if [ ! -d /sys/firmware/efi ] || [ -f /var/lib/partman/ignore_uefi ]; then
 	debug "Not on UEFI platform"
 	exit 1
 fi

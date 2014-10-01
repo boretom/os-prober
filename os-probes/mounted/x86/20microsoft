@@ -8,7 +8,7 @@ mpoint="$2"
 type="$3"
 
 # This script looks for legacy BIOS bootloaders only. Skip if running UEFI
-if [ -d /sys/firmware/efi ]; then
+if [ -d /sys/firmware/efi ] && [ ! -f /var/lib/partman/ignore_uefi ]; then
 	debug "Skipping legacy bootloaders on UEFI system"
 	exit 1
 fi
