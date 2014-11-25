@@ -3,7 +3,7 @@ os-prober (1.65) unstable; urgency=medium
   [ Steve McIntyre ]
   * Recognise the new ignore_uefi flag from partman-efi.
 
- -- Steve McIntyre <93sam@debian.org>  Wed, 01 Oct 2014 01:42:22 +0100
+ -- Steve McIntyre <93sam@debian.org>  Tue, 25 Nov 2014 17:41:06 +0000
 
 os-prober (1.64) unstable; urgency=medium
 
