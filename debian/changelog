@@ -2,6 +2,10 @@ os-prober (1.65+deb8u1) UNRELEASED; urgency=medium
 
   * os-probes/mounted/x86/05efi: Fix check on ID_PART_ENTRY_SCHEME, to
     look for "dos" instead of "msdos" (Closes: #817023).
+  * Add -a flag to grep -qs for Windows Vista detection. It appears the
+    file isn't always considered as a text file, so this should be more
+    robust. Thanks to Gianluigi Tiesi for the report and the suggestion
+    (Closes: #791383).
 
  -- Cyril Brulebois <kibi@debian.org>  Sat, 24 Jun 2017 19:38:49 +0200
 
