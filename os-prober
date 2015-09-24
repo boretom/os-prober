@@ -25,6 +25,7 @@ on_sataraid () {
 }
 
 partitions () {
+	os_name="$(uname -s)"
 	# Exclude partitions that have whole_disk sysfs attribute set.
 	if [ -d /sys/block ]; then
 		# Exclude partitions on physical disks that are part of a
@@ -48,12 +49,18 @@ partitions () {
 				done
 			done
 		fi
-	elif [ "$(uname -s)" = Linux ]; then
+	elif [ "$os_name" = Linux ]; then
 		echo "Cannot find list of partitions!  (Try mounting /sys.)" >&2
 		exit 1
+	elif [ "$os_name" = GNU ]; then
+		for part in /dev/hd*s*[0-9] /dev/sd*s*[0-9]; do
+			if [ -s "$part" ]; then
+				echo "$part"
+			fi
+		done
 	else
-		# We don't know how to probe OSes on non-Linux kernels.  For
-		# now, just don't get in the way.
+		# We don't know how to probe OSes on non-Linux and non-GNU kernels.
+		# For now, just don't get in the way.
 		exit 0
 	fi
 
