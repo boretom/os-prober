@@ -5,8 +5,8 @@
 %:
 	dh $@
 
-ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH)
-ifneq (,$(findstring :$(ARCH):,:i386:amd64:))
+ARCH=$(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+ifneq (,$(filter i386 amd64,$(ARCH)))
 ARCH=x86
 endif
 
