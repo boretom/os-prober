@@ -3,7 +3,7 @@ os-prober (1.67) UNRELEASED; urgency=medium
   [ James Clarke ]
   * rules: Use DEB_HOST_ARCH_CPU instead of DEB_HOST_ARCH, and thus treat
     *-{i386,amd64} as x86
-  * Support probing on hurd-any.
+  * Support probing on hurd-any.  Closes: #799883.
 
  -- Samuel Thibault <sthibault@debian.org>  Tue, 29 Sep 2015 01:31:03 +0200
 
