@@ -116,6 +116,29 @@ fs_type () {
 	fi
 }
 
+is_dos_extended_partition() {
+	if type blkid >/dev/null 2>&1; then
+		local output
+
+		output="$(blkid -o export $1)"
+
+		# old blkid (util-linux << 2.24) errors out on extended p.
+		if [ "$?" = "2" ]; then
+			return 0
+		fi
+
+		# dos partition type and no filesystem type?...
+		if echo $output | grep -q ' PTTYPE=dos ' &&
+				! echo $output | grep -q ' TYPE='; then
+			return 0
+		else
+			return 1
+		fi
+	fi
+
+	return 1
+}
+
 parse_proc_mounts () {
 	while read -r line; do
 		set -f

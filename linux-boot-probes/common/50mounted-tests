@@ -20,6 +20,10 @@ elif [ "$types" = ntfs ]; then
 		types='ntfs-3g ntfs'
 	fi
 elif [ -z "$types" ]; then
+	if is_dos_extended_partition "$partition"; then
+		debug "$1 looks like an extended dos partition; skipping"
+		exit 0
+	fi
 	if type cryptsetup >/dev/null 2>&1 && \
 	   cryptsetup luksDump "$partition" >/dev/null 2>&1; then
 		debug "$1 is a LUKS partition; skipping"
