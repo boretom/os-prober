@@ -2,6 +2,8 @@ os-prober (1.68) UNRELEASED; urgency=medium
 
   * Adjust extended dos partition support for blkid/util-linux 2.24+,
     thanks to Andreas Henriksson (Closes: #735169).
+  * Add support for Windows 10 (otherwise reported as Windows Recovery
+    Environment). Thanks, Philipp Wolfer! (Closes: #801278).
 
  -- Cyril Brulebois <kibi@debian.org>  Thu, 08 Oct 2015 02:30:41 +0200
 
