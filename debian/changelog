@@ -1,11 +1,11 @@
-os-prober (1.70) UNRELEASED; urgency=medium
+os-prober (1.70) unstable; urgency=medium
 
   [ Justus Winter ]
   * Fix hurd-any support: Test for /servers instead of /servers/exec to avoid
     starting an translator in the mounted system. Also, /hurd/init might be
     phased out at some point (Closes: #802053).
 
- -- Samuel Thibault <sthibault@debian.org>  Sat, 17 Oct 2015 14:26:43 +0200
+ -- Christian Perrier <bubulle@debian.org>  Tue, 27 Oct 2015 06:45:58 +0100
 
 os-prober (1.68) unstable; urgency=medium
 
