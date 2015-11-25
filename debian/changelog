@@ -1,3 +1,9 @@
+os-prober (1.71) UNRELEASED; urgency=medium
+
+  * Add support for 4MLinux, thanks to Zbigniew Konojacki.
+
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 25 Nov 2015 21:44:12 +0100
+
 os-prober (1.70) unstable; urgency=medium
 
   [ Justus Winter ]

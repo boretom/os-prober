@@ -125,6 +125,9 @@ if (ls "$dir"/lib*/ld*.so* || ls "$dir"/usr/lib*/ld*.so*) >/dev/null 2>/dev/null
 	elif [ -e "$dir/etc/meego-release" ]; then
 		short="MeeGo"
 		long="$(head -1 "$dir/etc/meego-release")"
+	elif [ -e "$dir/etc/4MLinux-version" ]; then
+		short="4MLinux"
+		long="$(head -1 "$dir/etc/4MLinux-version")"
 	else
 		short="Linux"
 		long="unknown Linux distribution"
