@@ -1,4 +1,4 @@
-os-prober (1.71) UNRELEASED; urgency=medium
+os-prober (1.71) unstable; urgency=medium
 
   [ Cyril Brulebois ]
   * Add support for 4MLinux, thanks to Zbigniew Konojacki.
@@ -6,7 +6,7 @@ os-prober (1.71) UNRELEASED; urgency=medium
   [ Colin Watson ]
   * Use HTTPS for Vcs-* URLs, and link to cgit rather than gitweb.
 
- -- Cyril Brulebois <kibi@debian.org>  Wed, 25 Nov 2015 21:44:12 +0100
+ -- Christian Perrier <bubulle@debian.org>  Sat, 30 Jan 2016 07:38:56 +0100
 
 os-prober (1.70) unstable; urgency=medium
 
