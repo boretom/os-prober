@@ -132,6 +132,13 @@ for partition in $(partitions); do
 		continue
 	fi
 
+	# Skip DOS-type partitions with no filesystem type (extended or other
+	# container types such as a protective MBR).
+	if is_dos_extended_partition $partition; then
+		debug "$partition: DOS container partition; skipping"
+		continue
+	fi
+
 	# Skip partitions used in software RAID arrays
 	if grep -q "^$mapped" "$OS_PROBER_TMP/raided-map" ; then
 		debug "$partition: part of software raid array"

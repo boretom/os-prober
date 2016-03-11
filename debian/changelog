@@ -1,3 +1,12 @@
+os-prober (1.72) UNRELEASED; urgency=medium
+
+  * os-prober: Check for MSDOS extended/container partitions (those who do not
+    have fs type data according to blkid) and skip any further tests which
+    would require the partition to be mounted. Thanks to Stefan Bader for the
+    patch. (Closes: #772526)
+
+ -- Mathieu Trudel-Lapierre <mathieu-tl@ubuntu.com>  Fri, 11 Mar 2016 07:43:31 -0500
+
 os-prober (1.71) unstable; urgency=medium
 
   [ Cyril Brulebois ]
