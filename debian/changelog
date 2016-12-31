@@ -1,3 +1,14 @@
+os-prober (1.72) UNRELEASED; urgency=medium
+
+  * Improve logging of mounting and setting partitions to ro/rw (thanks, Ivo
+    De Decker).
+  * Use a read-only device-mapper entry if possible rather than setting the
+    underlying device to read-only (thanks, Ivo De Decker; closes: #701814).
+    Note that this introduces a dependency on dmsetup on Linux
+    architectures.
+
+ -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
+
 os-prober (1.71) unstable; urgency=medium
 
   [ Cyril Brulebois ]
