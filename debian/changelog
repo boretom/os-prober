@@ -6,6 +6,9 @@ os-prober (1.72) UNRELEASED; urgency=medium
     underlying device to read-only (thanks, Ivo De Decker; closes: #701814).
     Note that this introduces a dependency on dmsetup on Linux
     architectures.
+  * Remove the "blockdev --setro" code path entirely, since the read-only
+    device-mapper arrangement supersedes it and should be safer (closes:
+    #648208).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 

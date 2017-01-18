@@ -73,17 +73,6 @@ elif dm_device="$(do_dmsetup osprober-linux "$partition")" && \
 			debug "mounting $dm_device ($partition) as $type failed: $mountinfo"
 		fi
 	done
-else
-	ro_partition "$partition"
-	for type in $types; do
-		if mountinfo=`mount -o ro -t "$type" "$partition" "$tmpmnt" 2>&1`; then
-			debug "mounted as $type filesystem"
-			mounted=1
-			break
-		else
-			debug "mounting $partition as $type failed: $mountinfo"
-		fi
-	done
 fi
 
 if [ "$mounted" ]; then
