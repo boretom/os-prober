@@ -9,6 +9,9 @@ os-prober (1.72) UNRELEASED; urgency=medium
   * Remove the "blockdev --setro" code path entirely, since the read-only
     device-mapper arrangement supersedes it and should be safer (closes:
     #648208).
+  * Make os-prober-udeb depend on grub-mount-udeb on all Linux and kFreeBSD
+    architectures, now that it's available on them all (thanks, James
+    Cowgill; closes: #776275).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 
