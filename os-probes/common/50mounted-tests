@@ -71,40 +71,28 @@ if type grub-mount >/dev/null 2>&1 && \
 		debug "mounted using GRUB, but unknown filesystem?"
 		type=fuseblk
 	fi
-else
-	if type dmsetup >/dev/null 2>&1 && \
-	   type blockdev >/dev/null 2>&1; then
-		partition_name="osprober-${partition##*/}"
-		dm_device="/dev/mapper/$partition_name"
-		size_p=$(blockdev --getsize $partition )
-		if [ -e "$dm_device" ]; then
-			error "$dm_device already exists"
-			dm_device=
+elif dm_device="$(do_dmsetup osprober "$partition")" && \
+     [ "$dm_device" ]; then
+	for type in $types $delaytypes; do
+		if mountinfo=`mount -o ro -t "$type" "$dm_device" "$tmpmnt" 2>&1`; then
+			debug "mounted as $type filesystem"
+			mounted=1
+			break
 		else
-			debug "creating device mapper device $dm_device"
-			echo "0 $size_p linear $partition 0" | dmsetup create -r $partition_name
-			for type in $types $delaytypes; do
-				if mountinfo=`mount -o ro -t "$type" "$dm_device" "$tmpmnt" 2>&1`; then
-					debug "mounted as $type filesystem"
-					mounted=1
-					break
-				else
-					debug "mounting $dm_device ($partition) as $type failed: $mountinfo"
-				fi
-			done
+			debug "mounting $dm_device ($partition) as $type failed: $mountinfo"
 		fi
-	else
-		ro_partition "$partition"
-		for type in $types $delaytypes; do
-			if mountinfo=`mount -o ro -t "$type" "$partition" "$tmpmnt" 2>&1`; then
-				debug "mounted as $type filesystem"
-				mounted=1
-				break
-			else
-				debug "mounting $partition as $type failed: $mountinfo"
-			fi
-		done
-	fi
+	done
+else
+	ro_partition "$partition"
+	for type in $types $delaytypes; do
+		if mountinfo=`mount -o ro -t "$type" "$partition" "$tmpmnt" 2>&1`; then
+			debug "mounted as $type filesystem"
+			mounted=1
+			break
+		else
+			debug "mounting $partition as $type failed: $mountinfo"
+		fi
+	done
 fi
 
 if [ "$mounted" ]; then
