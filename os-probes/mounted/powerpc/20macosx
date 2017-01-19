@@ -7,7 +7,9 @@ mpoint="$2"
 type="$3"
 
 debug() {
-  logger -t macosx-prober "debug: $@"
+  if [ -z "$OS_PROBER_DISABLE_DEBUG" ]; then
+    logger -t macosx-prober "debug: $@"
+  fi
 }
 
 # Weed out stuff that doesn't apply to us
