@@ -52,7 +52,7 @@ progname=
 cache_progname() {
   case $progname in
     '')
-      progname="$(basename "$0")"
+      progname="${0##*/}"
       ;;
   esac
 }

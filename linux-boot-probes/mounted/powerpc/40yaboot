@@ -27,7 +27,7 @@ recordstanza () {
 		fi
 
 		if [ -z "$title" ]; then
-			title="$(basename "$kernel")"
+			title="${kernel##*/}"
 		fi
 		if [ "$read_only" ]; then
 			parameters="ro $parameters"

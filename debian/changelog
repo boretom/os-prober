@@ -21,6 +21,8 @@ os-prober (1.72) UNRELEASED; urgency=medium
     options (thanks, Hedayat Vatankhah; closes: #674561).
   * Disable debugging if OS_PROBER_DISABLE_DEBUG is set (thanks, Hedayat
     Vatankhah; closes: #698598).
+  * Replace basename/dirname with shell string processing (thanks, Hedayat
+    Vatankhah; part of #694668).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 
