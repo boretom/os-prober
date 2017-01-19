@@ -14,11 +14,16 @@ log_output () {
 	fi
 }
 
+: >"$OS_PROBER_TMP/dmraid-map"
+DMRAID=$(type dmraid >/dev/null 2>&1 || true)
+if [ "$DMRAID" ]; then
+	dmraid -r -c >"$OS_PROBER_TMP/dmraid-map"
+fi
+
 on_sataraid () {
-	type dmraid >/dev/null 2>&1 || return 1
 	local parent="${1%/*}"
 	local device="/dev/${parent##*/}"
-	if dmraid -r -c | grep -q "$device"; then
+	if grep -q "$device" "$OS_PROBER_TMP/dmraid-map"; then
 		return 0
 	fi
 	return 1
