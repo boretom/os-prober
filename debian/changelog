@@ -17,6 +17,8 @@ os-prober (1.72) UNRELEASED; urgency=medium
   * Fix detection of /usr/ partition as a GNU/Linux root partition when
     /lib* directories are moved to /usr/ completely (thanks, Hedayat
     Vatankhah; closes: #698733).
+  * Make the yaboot parser more tolerant about the syntax of "append"
+    options (thanks, Hedayat Vatankhah; closes: #674561).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 
