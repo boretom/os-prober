@@ -1,3 +1,9 @@
+os-prober (1.73) UNRELEASED; urgency=medium
+
+  * Add support for Mageia, thanks to Neal Gompa (Closes: #851983).
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 20 Jan 2017 16:33:47 +0100
+
 os-prober (1.72) unstable; urgency=medium
 
   * Improve logging of mounting and setting partitions to ro/rw (thanks, Ivo

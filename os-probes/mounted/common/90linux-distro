@@ -74,6 +74,9 @@ if (ls "$dir"/lib*/ld*.so* && [ -d "$dir/boot" ] || ls "$dir"/usr/lib*/ld*.so*) 
 	elif [ -e "$dir/etc/openna-release" ]; then
 		short="OpenNA"
 		long="$(cat "$dir/etc/openna-release")"
+	elif [ -e "$dir/etc/mageia-release" ]; then
+		short="Mageia"
+		long="$(cat "$dir/etc/mageia-release")"
 	elif [ -e "$dir/etc/conectiva-release" ]; then
 		short="Conectiva"
 		long="$(cat "$dir/etc/conectiva-release")"
