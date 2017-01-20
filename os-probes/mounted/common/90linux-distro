@@ -131,6 +131,9 @@ if (ls "$dir"/lib*/ld*.so* && [ -d "$dir/boot" ] || ls "$dir"/usr/lib*/ld*.so*) 
 	elif [ -e "$dir/etc/4MLinux-version" ]; then
 		short="4MLinux"
 		long="4MLinux $(head -1 "$dir/etc/4MLinux-version")"
+	elif [ -e "$dir/etc/devuan_version" ]; then
+		short="Devuan"
+		long="$(printf "Devuan GNU/Linux (%s)\n" "$(cat "$dir/etc/devuan_version")")"
 	else
 		short="Linux"
 		long="unknown Linux distribution"
