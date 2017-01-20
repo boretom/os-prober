@@ -19,7 +19,7 @@ do_unmount() {
 	rmdir "$tmpmnt" || true
 }
 
-types="$(fs_type "$partition")" || types=NOT-DETECTED
+types="$(fs_type "$partition")"
 if [ "$types" = NOT-DETECTED ]; then
 	debug "$1 type not recognised; skipping"
 	exit 0

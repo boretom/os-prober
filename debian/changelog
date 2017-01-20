@@ -28,6 +28,8 @@ os-prober (1.72) UNRELEASED; urgency=medium
   * Add os-release support (based loosely on a patch by Török Edwin; closes:
     #794409).
   * Add Devuan detection (thanks, David Hare; closes: #801631).
+  * Work harder to avoid trying to mount extended partitions (thanks,
+    Philippe Coval; closes: #784709).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 
