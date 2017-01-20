@@ -25,6 +25,8 @@ os-prober (1.72) UNRELEASED; urgency=medium
     Vatankhah; part of #694668).
   * Call dmraid only once (thanks, Jeff Mahoney).
   * Fix typos in README (thanks, Nyav; closes: #803155).
+  * Add os-release support (based loosely on a patch by Török Edwin; closes:
+    #794409).
 
  -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
 
