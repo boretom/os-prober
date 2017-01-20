@@ -1,4 +1,4 @@
-os-prober (1.72) UNRELEASED; urgency=medium
+os-prober (1.72) unstable; urgency=medium
 
   * Improve logging of mounting and setting partitions to ro/rw (thanks, Ivo
     De Decker).
@@ -33,7 +33,7 @@ os-prober (1.72) UNRELEASED; urgency=medium
   * Drop " (loader)" suffixes on Microsoft operating systems (thanks, Chris
     Lamb; closes: #787418).
 
- -- Colin Watson <cjwatson@debian.org>  Sat, 31 Dec 2016 17:11:49 +0000
+ -- Colin Watson <cjwatson@debian.org>  Fri, 20 Jan 2017 12:44:34 +0000
 
 os-prober (1.71) unstable; urgency=medium
 
