@@ -1,8 +1,9 @@
-os-prober (1.73) UNRELEASED; urgency=medium
+os-prober (1.73) unstable; urgency=medium
 
+  [ Cyril Brulebois ]
   * Add support for Mageia, thanks to Neal Gompa (Closes: #851983).
 
- -- Cyril Brulebois <kibi@debian.org>  Fri, 20 Jan 2017 16:33:47 +0100
+ -- Christian Perrier <bubulle@debian.org>  Sat, 21 Jan 2017 08:44:01 +0100
 
 os-prober (1.72) unstable; urgency=medium
 
