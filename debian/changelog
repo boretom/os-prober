@@ -1,3 +1,12 @@
+os-prober (1.74) UNRELEASED; urgency=medium
+
+  * Add workaround for hangs with LVM installations (Closes: #853277):
+    Run lsblk "$partition" at the top of 50mounted-tests to see if the
+    partition passed as a parameter might be the root partition. If
+    that's the case, exit early.
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 31 Jan 2017 22:11:23 +0100
+
 os-prober (1.73) unstable; urgency=medium
 
   [ Cyril Brulebois ]

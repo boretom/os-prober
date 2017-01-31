@@ -5,6 +5,13 @@ partition="$1"
 
 . /usr/share/os-prober/common.sh
 
+# Don't try and do stuff with what appears to be mounted as the root
+# partition:
+if lsblk "$partition" | grep -qs /$; then
+	debug "skipping $partition as it seems to be the root partition"
+	exit 1
+fi
+
 do_unmount() {
 	if [ "$mounted" ]; then
 		if ! umount "$tmpmnt"; then
