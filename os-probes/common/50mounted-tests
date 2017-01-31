@@ -7,7 +7,7 @@ partition="$1"
 
 # Don't try and do stuff with what appears to be mounted as the root
 # partition:
-if lsblk "$partition" | grep -qs /$; then
+if type lsblk >/dev/null 2>&1 && lsblk "$partition" | grep -qs /$; then
 	debug "skipping $partition as it seems to be the root partition"
 	exit 1
 fi

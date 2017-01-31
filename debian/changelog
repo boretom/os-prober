@@ -4,6 +4,7 @@ os-prober (1.74) UNRELEASED; urgency=medium
     Run lsblk "$partition" at the top of 50mounted-tests to see if the
     partition passed as a parameter might be the root partition. If
     that's the case, exit early.
+  * Only use the aforementioned workaround when lsblk is available.
 
  -- Cyril Brulebois <kibi@debian.org>  Tue, 31 Jan 2017 22:11:23 +0100
 
