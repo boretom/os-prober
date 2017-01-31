@@ -1,4 +1,4 @@
-os-prober (1.74) UNRELEASED; urgency=medium
+os-prober (1.74) unstable; urgency=high
 
   [ Ivo De Decker ]
   * os-probes/common/50mounted-tests: Skip partition when FS type is
@@ -6,7 +6,7 @@ os-prober (1.74) UNRELEASED; urgency=medium
     directly. This avoids hanging during “dmcreate setup” with
     unencrypted LVM setups (Closes: #853277).
 
- -- Cyril Brulebois <kibi@debian.org>  Tue, 31 Jan 2017 23:04:00 +0100
+ -- Cyril Brulebois <kibi@debian.org>  Wed, 01 Feb 2017 00:01:17 +0100
 
 os-prober (1.73) unstable; urgency=medium
 
