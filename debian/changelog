@@ -1,3 +1,13 @@
+os-prober (1.74) UNRELEASED; urgency=medium
+
+  [ Ivo De Decker ]
+  * os-probes/common/50mounted-tests: Skip partition when FS type is
+    LVM2_member, since one isn't supposed to touch physical volumes
+    directly. This avoids hanging during “dmcreate setup” with
+    unencrypted LVM setups (Closes: #853277).
+
+ -- Cyril Brulebois <kibi@debian.org>  Tue, 31 Jan 2017 23:04:00 +0100
+
 os-prober (1.73) unstable; urgency=medium
 
   [ Cyril Brulebois ]
