@@ -1,3 +1,13 @@
+os-prober (1.75) UNRELEASED; urgency=medium
+
+  * Remove code using device mapper (Closes: #860833, #853927, #853163).
+    This code doesn't work in d-i and it has some issues outside d-i. All
+    architectures can use the grub-mount codepath, which was already the
+    default anyway.
+    This also removes the dependency on dmsetup.
+
+ -- Ivo De Decker <ivodd@debian.org>  Sun, 30 Apr 2017 14:38:59 +0200
+
 os-prober (1.74) unstable; urgency=high
 
   [ Ivo De Decker ]

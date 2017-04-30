@@ -204,37 +204,14 @@ find_uuid () {
 	fi
 }
 
-do_dmsetup () {
-	local prefix partition dm_device partition_name size_p
-	prefix="$1"
-	partition="$2"
-	dm_device=
-
-	if type dmsetup >/dev/null 2>&1 && \
-	   type blockdev >/dev/null 2>&1; then
-		partition_name="osprober-linux-${partition##*/}"
-		dm_device="/dev/mapper/$partition_name"
-		size_p=$(blockdev --getsize $partition )
-		if [ -e "$dm_device" ]; then
-			error "$dm_device already exists"
-			dm_device=
-		else
-			debug "creating device mapper device $dm_device"
-			echo "0 $size_p linear $partition 0" | dmsetup create -r $partition_name
-		fi
-	fi
-	echo "$dm_device"
-}
-
-# Sets $mountboot and $dm_device as output variables.  This is very messy,
-# but POSIX shell isn't really up to the task of doing it more cleanly.
+# Sets $mountboot as output variables.  This is very messy, but POSIX shell
+# isn't really up to the task of doing it more cleanly.
 linux_mount_boot () {
 	partition="$1"
 	tmpmnt="$2"
 
 	bootpart=""
 	mounted=""
-	dm_device=""
 	if [ -e "$tmpmnt/etc/fstab" ]; then
 		# Try to mount any /boot partition.
 		bootmnt=$(parsefstab < "$tmpmnt/etc/fstab" | grep " /boot ") || true
@@ -305,13 +282,6 @@ linux_mount_boot () {
 					if type grub-mount >/dev/null 2>&1 && \
 					   grub-mount "$boottomnt" "$tmpmnt/boot" 2>/dev/null; then
 						mounted=1
-					elif dm_device="$(do_dmsetup osprober-linux "$boottomnt")" && [ "$dm_device" ]; then
-						if mountinfo=`mount -o ro "$dm_device" "$tmpmnt/boot" -t "$3"`; then
-							debug "mounted as $3 filesystem"
-							mounted=1
-						else
-							error "failed to mount $dm_device on $tmpmnt/boot: $mountinfo"
-						fi
 					fi
 				fi
 			fi
