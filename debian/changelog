@@ -1,9 +1,10 @@
-os-prober (1.76) UNRELEASED; urgency=medium
+os-prober (1.76) unstable; urgency=medium
 
+  [ Cyril Brulebois ]
   * os-probes/mounted/x86/05efi: Fix check on ID_PART_ENTRY_SCHEME, to
     look for "dos" instead of "msdos" (Closes: #817023).
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 24 Jun 2017 19:38:49 +0200
+ -- Christian Perrier <bubulle@debian.org>  Wed, 28 Jun 2017 07:08:36 +0200
 
 os-prober (1.75) unstable; urgency=medium
 
