@@ -1,3 +1,9 @@
+os-prober (1.77) UNRELEASED; urgency=medium
+
+  * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+ -- Cyril Brulebois <kibi@debian.org>  Fri, 27 Apr 2018 03:43:03 +0200
+
 os-prober (1.76) unstable; urgency=medium
 
   [ Cyril Brulebois ]
