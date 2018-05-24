@@ -1,3 +1,9 @@
+os-prober (1.76) UNRELEASED; urgency=medium
+
+  *  864181 -- look at the usbdisk branches, and see what's different FIXME
+
+ -- Philip Hands <phil@hands.com>  Thu, 24 May 2018 16:02:23 +0200
+
 os-prober (1.75) unstable; urgency=medium
 
   * Remove code using device mapper (Closes: #860833, #853927, #853163).
