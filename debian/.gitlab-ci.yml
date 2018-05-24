@@ -9,3 +9,9 @@ build:
     - git checkout $CI_COMMIT_REF_NAME
     - git pull
     - gbp buildpackage -uc -us --git-ignore-branch
+    - mkdir build
+    - mv ../*.udeb build/
+
+  artifacts:
+    paths:
+      - build/*
