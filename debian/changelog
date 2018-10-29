@@ -1,6 +1,11 @@
 os-prober (1.77) UNRELEASED; urgency=medium
 
+  [ Cyril Brulebois ]
   * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+  [ Colin Watson ]
+  * Change priority of os-prober binary package to optional, since
+    "Priority: extra" is now deprecated.
 
  -- Cyril Brulebois <kibi@debian.org>  Fri, 27 Apr 2018 03:43:03 +0200
 

@@ -21,7 +21,6 @@ Description: utility to detect other OSes on a set of drives
 Package: os-prober
 Architecture: any
 Section: utils
-Priority: extra
 Depends: ${shlibs:Depends}, ${misc:Depends}, grub-common [linux-any kfreebsd-any]
 Description: utility to detect other OSes on a set of drives
  This package detects other OSes available on a system and outputs the
