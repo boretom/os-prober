@@ -7,6 +7,9 @@ os-prober (1.77) UNRELEASED; urgency=medium
   * Change priority of os-prober binary package to optional, since
     "Priority: extra" is now deprecated.
 
+  [ Holger Wansing ]
+  * Remove trailing whitespaces from changelog file, to fix lintian tag.
+
  -- Cyril Brulebois <kibi@debian.org>  Fri, 27 Apr 2018 03:43:03 +0200
 
 os-prober (1.76) unstable; urgency=medium
@@ -292,7 +295,7 @@ os-prober (1.50) unstable; urgency=low
 
   [ Joey Hess ]
   * Avoid false positives in MS-DOS detection by also looking for
-    autoexec.bat. Closes: #663540 
+    autoexec.bat. Closes: #663540
 
   [ Colin Watson ]
   * When using grub-mount, pass the GRUB filesystem type to individual tests
@@ -406,7 +409,7 @@ os-prober (1.40) unstable; urgency=low
   * Fix Windows Vista and Windows Recovery Environment partitions
     recognition. (Thanks, Bouke Bunnik)
     Closes: #589676, LP: #476625
-  * Allow recognition of recent MINIX installations. 
+  * Allow recognition of recent MINIX installations.
     Thanks to Feiran Zheng
     Closes: #592924
 
