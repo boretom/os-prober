@@ -1,7 +1,10 @@
-os-prober (1.77) UNRELEASED; urgency=medium
+os-prober (1.77) unstable; urgency=medium
 
   [ Cyril Brulebois ]
   * Update Vcs-{Browser,Git} to point to salsa (alioth's replacement).
+
+  [ Philip Hands ]
+  * Add CI configuration for gitlab
 
   [ Colin Watson ]
   * Change priority of os-prober binary package to optional, since
@@ -10,7 +13,7 @@ os-prober (1.77) UNRELEASED; urgency=medium
   [ Holger Wansing ]
   * Remove trailing whitespaces from changelog file, to fix lintian tag.
 
- -- Cyril Brulebois <kibi@debian.org>  Fri, 27 Apr 2018 03:43:03 +0200
+ -- Holger Wansing <hwansing@mailbox.org>  Sun, 23 Dec 2018 19:52:58 +0100
 
 os-prober (1.76) unstable; urgency=medium
 
