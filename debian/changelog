@@ -1,3 +1,10 @@
+os-prober (1.78) UNRELEASED; urgency=medium
+
+  * Remove Christian Perrier from Uploaders, with many thanks for all
+    his contributions over the years!
+
+ -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:37:06 +0200
+
 os-prober (1.77) unstable; urgency=medium
 
   [ Cyril Brulebois ]
