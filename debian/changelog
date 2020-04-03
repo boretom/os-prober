@@ -1,9 +1,14 @@
 os-prober (1.78) UNRELEASED; urgency=medium
 
+  [ Cyril Brulebois ]
   * Remove Christian Perrier from Uploaders, with many thanks for all
     his contributions over the years! (Closes: #927552)
 
- -- Cyril Brulebois <kibi@debian.org>  Sat, 20 Apr 2019 22:37:06 +0200
+  [ Andrey Borzenkov ]
+  * Fix several problems in parsing of grub.cfg by 
+    linux-boot-probes/mounted/40grub2
+
+ -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
 os-prober (1.77) unstable; urgency=medium
 
