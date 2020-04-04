@@ -11,7 +11,8 @@ elilo=`find $1 -name "elilo.efi"`
 if [ -n "$elilo" ]; then
 	bdir="${elilo%/*}"
 	bdir="${elilo##*/}"
-	long="ELILO Boot Manager"
+	vendor=$(echo $bdir | sed 's|SuSE|SUSE|')
+	long="${vendor} ELILO Boot Manager"
 	short="ELILO"
 	path=${bdir}/elilo.efi
 	found=true

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Detects all Microsoft OSes on a collection of partitions.
+# Detects all UEFI bootloaders on EFI System Partition
 
 . /usr/share/os-prober/common.sh
 

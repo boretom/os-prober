@@ -8,6 +8,9 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * Fix several problems in parsing of grub.cfg by 
     linux-boot-probes/mounted/40grub2
   * Check for grub.cfg also in /boot/grub2, not only in /boot/grub.
+  * Keep UEFI scripts the same as they were in openSUSE:
+     * retain ELILO vendor prefix in case someone is really using it
+     * comment in 05efi is obviously wrong
 
   [ Thierry Vignaud ]
   * Check for Intel Matrix array (accept ESP on IMSM)
