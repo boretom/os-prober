@@ -19,6 +19,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * Factored logger efi fix
   * haiku: grep fix
   * Mounted partitions fix
+  * SUSE name fix
 
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
