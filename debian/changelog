@@ -18,6 +18,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * Don't load all fs module and don't test-mount
   * Factored logger efi fix
   * haiku: grep fix
+  * Mounted partitions fix
 
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 

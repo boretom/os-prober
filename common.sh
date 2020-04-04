@@ -151,7 +151,7 @@ parse_proc_mounts () {
 		set -f
 		set -- $line
 		set +f
-		printf '%s %s %s\n' "$(mapdevfs "$1")" "$2" "$3"
+		printf '%s %s %s %s\n' "$(mapdevfs "$1")" "$2" "$3" "$1"
 	done
 }
 

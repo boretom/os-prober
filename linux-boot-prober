@@ -40,7 +40,7 @@ else
 			bootpart="${mountboot%% *}"
 			bootmounted="${mountboot#* }"
 		else
-			bootpart="$partition"
+			bootpart="$(grep " $mpoint/boot " "$OS_PROBER_TMP/mounted-map" | head -n1 | cut -d " " -f 4)"
 			bootmounted=0
 		fi
 		for test in /usr/lib/linux-boot-probes/mounted/*; do
