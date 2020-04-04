@@ -24,6 +24,9 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * Gentoo fix
   * Probe MD devices fix
 
+  [ Peter Jones ]
+  * Don't count our dummy mach_kernel as real MacOS X.
+
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
 os-prober (1.77) unstable; urgency=medium
