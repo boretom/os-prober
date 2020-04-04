@@ -23,6 +23,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * umount fix
   * Gentoo fix
   * Probe MD devices fix
+  * Skip part on multipath
 
   [ Peter Jones ]
   * Don't count our dummy mach_kernel as real MacOS X.
