@@ -95,7 +95,9 @@ fi
 
 if [ "$grubconf" ] && \
    ([ ! -e "$mpoint/boot/grub/grub.cfg" ] || \
-    [ "$mpoint/boot/grub/$grubconf" -nt "$mpoint/boot/grub/grub.cfg" ]); then
+    [ "$mpoint/boot/grub/$grubconf" -nt "$mpoint/boot/grub/grub.cfg" ]) && \
+   ([ ! -e "$mpoint/boot/grub2/grub.cfg" ] || \
+    [ "$mpoint/boot/grub/$grubconf" -nt "$mpoint/boot/grub2/grub.cfg" ]); then
 	debug "parsing $grubconf"
 	parse_grub_menu "$mpoint" "$partition" "$bootpart" < "$mpoint/boot/grub/$grubconf"
 fi

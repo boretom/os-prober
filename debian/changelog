@@ -7,6 +7,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   [ Andrey Borzenkov ]
   * Fix several problems in parsing of grub.cfg by 
     linux-boot-probes/mounted/40grub2
+  * Check for grub.cfg also in /boot/grub2, not only in /boot/grub.
 
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
