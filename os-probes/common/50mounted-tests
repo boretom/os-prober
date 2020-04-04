@@ -37,19 +37,13 @@ elif [ -z "$types" ]; then
 		debug "$1 is a LUKS partition; skipping"
 		exit 0
 	fi
-	for type in $(grep -v nodev /proc/filesystems); do
-		# hfsplus filesystems are mountable as hfs. Try hfs last so
-		# that we can tell the difference.
-		if [ "$type" = hfs ]; then
-			delaytypes="${delaytypes:+$delaytypes }$type"
-		elif [ "$type" = fuseblk ]; then
-			if type ntfs-3g >/dev/null 2>&1; then
-				types="${types:+$types }ntfs-3g"
-			fi
-		else
-			types="${types:+$types }$type"
-		fi
-	done
+
+	# Simply skip such partition is better than trying to detect
+	# it by blinded test mounts with all kinds of kernel file system,
+	# that would lead to unwanted consequence like kernel oops and
+	# risk to corrupt your system and data.
+	debug "$1 is a partition without file system; skipping"
+	exit 0
 fi
 
 tmpmnt=/var/lib/os-prober/mount

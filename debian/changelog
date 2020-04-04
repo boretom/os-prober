@@ -12,6 +12,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   [ Thierry Vignaud ]
   * Check for Intel Matrix array (accept ESP on IMSM)
   * Bootpart name fix
+  * Don't load all fs module and don't test-mount
 
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
