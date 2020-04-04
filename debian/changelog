@@ -22,6 +22,7 @@ os-prober (1.78) UNRELEASED; urgency=medium
   * SUSE name fix
   * umount fix
   * Gentoo fix
+  * Probe MD devices fix
 
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
