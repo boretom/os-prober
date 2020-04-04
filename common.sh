@@ -253,7 +253,7 @@ linux_mount_boot () {
 				if [ "$bindfrom" != "$tmpmnt/boot" ]; then
 					if mount --bind "$bindfrom" "$tmpmnt/boot"; then
 						mounted=1
-						bootpart="$1"
+						bootpart="$tmppart"
 					else
 						debug "failed to bind-mount $bindfrom onto $tmpmnt/boot"
 					fi
@@ -261,6 +261,15 @@ linux_mount_boot () {
 			fi
 			if [ "$mounted" ]; then
 				:
+			elif [ -e "$tmppart" ]; then
+				bootpart="$tmppart"
+				boottomnt="$tmppart"
+			elif [ -e "$tmpmnt/$tmppart" ]; then
+				bootpart="$tmppart"
+				boottomnt="$tmpmnt/$tmppart"
+			elif [ -e "/target/$tmppart" ]; then
+				bootpart="$tmppart"
+				boottomnt="/target/$tmppart"
 			elif [ -e "$1" ]; then
 				bootpart="$1"
 				boottomnt="$1"
