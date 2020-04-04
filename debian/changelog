@@ -9,6 +9,9 @@ os-prober (1.78) UNRELEASED; urgency=medium
     linux-boot-probes/mounted/40grub2
   * Check for grub.cfg also in /boot/grub2, not only in /boot/grub.
 
+  [ Thierry Vignaud ]
+  * Check for Intel Matrix array (accept ESP on IMSM)
+
  -- Holger Wansing <hwansing@mailbox.org>  Fri, 03 Apr 2020 21:38:23 +0200
 
 os-prober (1.77) unstable; urgency=medium
