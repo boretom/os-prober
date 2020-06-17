@@ -1,0 +1,13 @@
+01-os-prober-frugalware.patch
+02-os-prober-mdraidfix.patch
+03-os-prober-btrfsfix.patch
+04-os-prober-bootpart-name-fix.patch
+05-os-prober-mounted-partitions-fix.patch
+06-os-prober-factor-out-logger.patch
+07-os-prober-factored-logger-efi-fix.patch
+08-os-prober-umount-fix.patch
+09-os-prober-grub2-parsefix.patch
+10-os-prober-grub2-multiple-images.patch
+11-os-prober-grepfix.patch
+12-os-prober-gentoo-fix.patch
+13-fix-blkid-path.patch
