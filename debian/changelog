@@ -1,3 +1,10 @@
+os-prober (1.77+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Apply Manjaro patches which fixes btrfs root detection
+
+ -- Thomas Kupper <thomas.kupper@gmail.com>  Wed, 17 Jun 2020 17:12:02 +0200
+
 os-prober (1.77) unstable; urgency=medium
 
   [ Cyril Brulebois ]
