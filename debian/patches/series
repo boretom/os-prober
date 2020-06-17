@@ -11,3 +11,4 @@
 11-os-prober-grepfix.patch
 12-os-prober-gentoo-fix.patch
 13-fix-blkid-path.patch
+14-os-prober-haiku-efi.patch

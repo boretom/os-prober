@@ -1,3 +1,10 @@
+os-prober (1.77+nmu2) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Add first support for Haiku EFI boot manager
+
+ -- Jane Doe <jane@nuc8i7.fritz.box>  Wed, 17 Jun 2020 22:25:13 +0200
+
 os-prober (1.77+nmu1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
