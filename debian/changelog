@@ -1,3 +1,10 @@
+os-prober (1.77+nmu1) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Add Fedora 32 patches and prep commands
+
+ -- Jane Doe <jane@nuc8i7.fritz.box>  Thu, 18 Jun 2020 08:50:04 +0200
+
 os-prober (1.77) unstable; urgency=medium
 
   [ Cyril Brulebois ]
