@@ -1,7 +1,8 @@
-os-prober (1.77+nmu1) UNRELEASED; urgency=medium
+os-prober (1.77+manjaro1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * Apply Manjaro patches which fixes btrfs root detection
+  * Add Haiku EFI boot manager detection patch
 
  -- Thomas Kupper <thomas.kupper@gmail.com>  Wed, 17 Jun 2020 17:12:02 +0200
 
