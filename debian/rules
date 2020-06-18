@@ -27,10 +27,6 @@ LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS)
 override_dh_auto_configure:
 	dh_auto_configure
 	find -type f -exec sed -i -e 's|usr/lib|usr/libexec|g' {} \;
-	sed -i -e 's|grub-probe|grub2-probe|g' os-probes/common/50mounted-tests \
-	     linux-boot-probes/common/50mounted-tests
-	sed -i -e 's|grub-mount|grub2-mount|g' os-probes/common/50mounted-tests \
-	     linux-boot-probes/common/50mounted-tests common.sh
 
 override_dh_auto_build:
 	$(MAKE) CC=$(CC) CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)"

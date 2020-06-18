@@ -1,9 +1,16 @@
+os-prober (1.77+nmu2) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Remove some counterproductive prep
+
+ -- Thomas Kupper <thomas.kupper@gmail.com>  Thu, 18 Jun 2020 16:19:24 +0200
+
 os-prober (1.77+nmu1) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
   * Add Fedora 32 patches and prep commands
 
- -- Jane Doe <jane@nuc8i7.fritz.box>  Thu, 18 Jun 2020 08:50:04 +0200
+ -- Thomas Kupper <thomas.kupper@gmail.com>  Thu, 18 Jun 2020 08:50:04 +0200
 
 os-prober (1.77) unstable; urgency=medium
 
